@@ -16,6 +16,8 @@ HE2Gene is trained to simultaneously infer the gene expression and pathological 
 ## Datasets
 We analyzed two publicly available spatial transcriptomic datasets. The images and gene expression profiles are available at (https://data.mendeley.com/datasets/29ntw7sh4r/5) for the HBCIS dataset and (https://github.com/almaan/her2st) for the HER2+ dataset.
 
+An example dataset in data/example are used for demonstration.
+
 
 ## Pre-trained models
 The HE2Gene_Base and HE2Gene_Spat pretrained models can be download from https://drive.google.com/file/d/17Vo9pXtFvxF9AmnXVrjsjcYsU0CY0fz2/view?usp=drive_link and https://drive.google.com/file/d/1r2-JlkHXDLD8iwnwkkw1aoYlWrjQg1ss/view?usp=drive_link.
