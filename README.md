@@ -18,12 +18,23 @@ We analyzed two publicly available spatial transcriptomic datasets. The images a
 
 
 ## Pre-trained models
-https://drive.google.com/file/d/17Vo9pXtFvxF9AmnXVrjsjcYsU0CY0fz2/view?usp=drive_link
-https://drive.google.com/file/d/1r2-JlkHXDLD8iwnwkkw1aoYlWrjQg1ss/view?usp=drive_link
+The HE2Gene_Base and HE2Gene_Spat pretrained models can be download from https://drive.google.com/file/d/17Vo9pXtFvxF9AmnXVrjsjcYsU0CY0fz2/view?usp=drive_link and https://drive.google.com/file/d/1r2-JlkHXDLD8iwnwkkw1aoYlWrjQg1ss/view?usp=drive_link.
 
 ## Single patch prediction 
 
-## Whole slide prediction 
+To perform gene inference based on single spot patch, run 
+```sh
+python3 ./src/patch_pred.py
+``` 
+
+
+## Whole slide prediction
+
+
+To perform gene inference based on whole-slide image, run 
+```sh
+python3 ./src/slide_pred.py
+``` 
 
 ## Train using your own datasets
 
@@ -37,5 +48,10 @@ To perform HE2Gene with spatial-aware constraint, run
 python3 he2gene-spat.py
 ```
 
+
+To generate the gene map for whole-slide image, run 
+```sh
+python3 ./src/visualize.py predictions.npz --gene A1BG
+``` 
 
 
