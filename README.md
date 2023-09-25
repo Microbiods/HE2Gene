@@ -16,7 +16,7 @@ HE2Gene is trained to simultaneously infer the gene expression and pathological 
 ## Datasets
 We analyzed two publicly available spatial transcriptomic datasets. The images and gene expression profiles are available at (https://data.mendeley.com/datasets/29ntw7sh4r/5) for the HBCIS dataset and (https://github.com/almaan/her2st) for the HER2+ dataset.
 
-An example dataset in data/example are used for demonstration.
+An example dataset shown in data/exps are used for demonstration.
 
 
 ## Pre-trained models
@@ -24,10 +24,11 @@ The HE2Gene_Base and HE2Gene_Spat pretrained models can be download from https:/
 
 ## Single patch prediction 
 
-Single patch prediction are based on HE2Gene-Base, to perform gene inference based on single spot patches, put your patches image into the data/exp folder and then run 
+Single patch prediction are based on HE2Gene-Base, to perform gene inference based on single spot patches, please put your patch images into the data/exps folder and then run 
 ```sh
-python3 ./src/patch_pred.py
-``` 
+python3 ./src/patch_pred.py ./data/exps -image_size 224 --batch_size 8
+```
+the script will generate 3 files in the output folder which are the expression levels of target 250 genes, the expression levels of 19699 auxiliary genes, and the pathological annotation, i.e., tumor or normal.
 
 
 ## Whole slide prediction
@@ -35,7 +36,7 @@ python3 ./src/patch_pred.py
 
 To perform gene inference based on whole-slide image, run 
 ```sh
-python3 ./src/slide_pred.py
+python3 ./src/slide_pred.py --root ./data/exps -image_size 224 --batch_size 1
 ``` 
 
 ## Train using your own datasets
