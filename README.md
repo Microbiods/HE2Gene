@@ -34,10 +34,14 @@ the script will generate 3 files in the output folder which are the expression l
 ## Whole slide prediction
 
 
-To perform gene inference based on whole-slide image, run 
+Whole slide prediction are based on HE2Gene-Spat since it considers the patch-based spatial dependencies, to perform gene inference based on whole-slide image, run 
 ```sh
 python3 ./src/slide_pred.py --root ./data/exps -image_size 224 --batch_size 1
-``` 
+```
+The script will also generate 3 files in the output folder for target 250 genes, 19699 auxiliary genes, and the pathological annotation. Please note that the image name in the exps folder should be in the following format:
+'patient/section id'_x_y.tif
+While x and y are the spatial coordinates obtained by spatial transcriptomics technology.
+
 
 ## Train using your own datasets
 
