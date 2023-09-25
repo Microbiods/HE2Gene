@@ -24,7 +24,7 @@ The HE2Gene_Base and HE2Gene_Spat pretrained models can be download from https:/
 
 ## Single patch prediction 
 
-To perform gene inference based on single spot patch, run 
+Single patch prediction are based on HE2Gene-Base, to perform gene inference based on single spot patches, put your patches image into the data/exp folder and then run 
 ```sh
 python3 ./src/patch_pred.py
 ``` 
