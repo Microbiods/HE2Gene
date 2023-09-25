@@ -39,8 +39,10 @@ Whole slide prediction are based on HE2Gene-Spat since it considers the patch-ba
 python3 ./src/slide_pred.py --root ./data/exps -image_size 224 --batch_size 1
 ```
 The script will also generate 3 files in the output folder for target 250 genes, 19699 auxiliary genes, and the pathological annotation. Please note that the image name in the exps folder should be in the following format:
+
 'patient/section id'_x_y.tif
-While x and y are the spatial coordinates obtained by spatial transcriptomics technology.
+
+where x and y are the spatial coordinates obtained by spatial transcriptomics technology.
 
 
 ## Train using your own datasets
@@ -54,7 +56,21 @@ To perform HE2Gene with spatial-aware constraint, run
 ```sh
 python3 he2gene-spat.py
 ```
+You can revise the defalut parameters by revise the params dict or the script input:
 
+parser.add_argument('--aux', type=float, default=20.0, help='weight for aux loss')
+parser.add_argument('--tmr', type=float, default=1.0, help='weight for tmr loss')
+
+params = {
+    "crop_size": 150,
+    "image_size": 224,
+    "batch_size": 256,   
+    "num_workers": 8,
+    "learning_rate": 1e-5,
+    "weight_decay": 1e-4,
+    "epochs": 100,
+    "patience": 10,
+    }
 
 To generate the gene map for whole-slide image, run 
 ```sh
